@@ -10,7 +10,7 @@ exports.seed = async function (knex) {
       about: 'Sushi Haven offers a diverse menu of sushi rolls, sashimi, and Japanese delights.',
       contact_phone: '456-789-0123',
       contact_email: 'info@sushihaven.com',
-      image_url: 'https://example.com/sushihaven.jpg',
+      image_url: 'https://media.architecturaldigest.com/photos/572a34ffe50e09d42bdfb5e0/master/pass/japanese-restaurants-la-01.jpg',
     },
     {
       id: 2,
@@ -20,7 +20,7 @@ exports.seed = async function (knex) {
       about: 'Tokyo Delights brings the traditional flavors of Japan with a modern twist, offering a variety of sushi, sashimi, and Japanese specialties.',
       contact_phone: '789-012-3456',
       contact_email: 'info@tokyodelights.com',
-      image_url: 'https://example.com/tokyodelights.jpg',
+      image_url: 'https://www.contemporist.com/wp-content/uploads/2015/04/atisuto-restaurant_060415_02-800x471.jpg',
     },
     {
       id: 3,
@@ -30,7 +30,7 @@ exports.seed = async function (knex) {
       about: 'Curry Palace brings the authentic flavors of India with a variety of curry dishes.',
       contact_phone: '789-012-3456',
       contact_email: 'info@currypalace.com',
-      image_url: 'https://example.com/currypalace.jpg',
+      image_url: 'https://assets.delawaretoday.com/2023/08/indian-food-1068x712.jpg',
     },
     {
       id: 4,
@@ -40,7 +40,7 @@ exports.seed = async function (knex) {
       about: 'Spice Kingdom is a haven for food enthusiasts seeking the authentic taste of Indian cuisine. Our menu showcases a splendid variety of aromatic curries, biryanis, and delectable desserts.',
       contact_phone: '456-789-0123',
       contact_email: 'info@currykingdom.com',
-      image_url: 'https://example.com/currykingdom.jpg',
+      image_url: 'https://lh3.googleusercontent.com/p/AF1QipNDtipYTVKdxbQT6Dz4nGWupkFXkilemfQYRC_V=s1360-w1360-h1020',
     },
     {
       id: 5,
@@ -50,7 +50,7 @@ exports.seed = async function (knex) {
       about: 'Burger Bliss is your destination for mouthwatering burgers and all-American favorites.',
       contact_phone: '234-567-8901',
       contact_email: 'info@burgerbliss.com',
-      image_url: 'https://example.com/burgerbliss.jpg',
+      image_url: 'https://res.cloudinary.com/the-infatuation/image/upload/c_fill,w_828,ar_4:3,g_center,f_auto/images/Burger_Joint-Burgers_and_Fries-Unknown_exqjba',
     },
     {
       id: 6,
@@ -60,7 +60,7 @@ exports.seed = async function (knex) {
       about: 'Classic Diner Delight takes you back to the golden age of diners with a menu full of timeless American favorites. From hearty burgers to comforting breakfast classics, there\'s something for everyone.',
       contact_phone: '789-012-3456',
       contact_email: 'info@classicdinerdelight.com',
-      image_url: 'https://example.com/classicdinerdelight.jpg',
+      image_url: 'https://img.buzzfeed.com/buzzfeed-static/static/2015-03/13/12/enhanced/webdr13/original-25579-1426265054-24.jpg?downsize=700%3A%2A&output-quality=auto&output-format=auto',
     },
     {
       id: 7,
@@ -70,7 +70,7 @@ exports.seed = async function (knex) {
       about: 'Taco Fiesta is the go-to spot for an authentic Mexican fiesta in every bite.',
       contact_phone: '890-123-4567',
       contact_email: 'info@tacofiesta.com',
-      image_url: 'https://example.com/tacofiesta.jpg',
+      image_url: 'https://kristineskitchenblog.com/wp-content/uploads/2023/02/tacos-recipe-16-2.jpg',
     },
     {
       id: 8,
@@ -80,7 +80,7 @@ exports.seed = async function (knex) {
       about: 'Spicy Salsa brings the heat with its mouthwatering selection of Mexican delicacies.',
       contact_phone: '987-654-3210',
       contact_email: 'info@spicysalsa.com',
-      image_url: 'https://example.com/spicysalsa.jpg',
+      image_url: 'https://cdn.shopify.com/s/files/1/1321/0493/files/vanhornguacrecipe.jpg?v=1616605933',
     },
     {
       id: 9,
@@ -90,7 +90,7 @@ exports.seed = async function (knex) {
       about: 'Pizza Palace serves up mouthwatering pizzas with a wide selection of tasty toppings.',
       contact_phone: '543-210-9876',
       contact_email: 'info@pizzapalace.com',
-      image_url: 'https://example.com/pizzapalace.jpg',
+      image_url: 'https://images.squarespace-cdn.com/content/v1/5831f225c534a553942c4eef/1663257481680-WTTLPR43NXOKBKI4ZK1M/Group-38.jpg?format=2500w',
     },
     {
       id: 10,
@@ -100,7 +100,7 @@ exports.seed = async function (knex) {
       about: 'Pasta Paradise is your go-to place for delicious and traditional Italian cuisine.',
       contact_phone: '123-456-7890',
       contact_email: 'info@pastaparadise.com',
-      image_url: 'https://example.com/pastaparadise.jpg',
+      image_url: 'https://media.timeout.com/images/105437966/750/562/image.jpg',
     },
     {
       id: 11,
@@ -110,7 +110,7 @@ exports.seed = async function (knex) {
       about: 'Vegan Vibes offers a menu full of delicious and wholesome plant-based dishes.',
       contact_phone: '321-654-0987',
       contact_email: 'info@veganvibes.com',
-      image_url: 'https://example.com/veganvibes.jpg',
+      image_url: 'https://images.squarespace-cdn.com/content/v1/571898482b8dde43af06c296/a5fe6891-4d1b-47be-851d-e3267acea677/vegan+restaurant+La+Jolla+San+Diego.jpg',
     },
     {
       id: 12,
@@ -120,7 +120,7 @@ exports.seed = async function (knex) {
       about: 'Healthy Bites is your destination for nutritious and delicious meals to support your well-being.',
       contact_phone: '210-987-6543',
       contact_email: 'info@healthybites.com',
-      image_url: 'https://example.com/healthybites.jpg',
+      image_url: 'https://health.clevelandclinic.org/wp-content/uploads/sites/3/2016/12/WrapSandwich.jpg',
     },
     {
       id: 13,
@@ -130,7 +130,7 @@ exports.seed = async function (knex) {
       about: 'Mediterranean Delight offers a taste of the Mediterranean with fresh and nutritious dishes.',
       contact_phone: '567-890-1234',
       contact_email: 'info@mediterraneandelight.com',
-      image_url: 'https://example.com/mediterraneandelight.jpg',
+      image_url: 'https://media.timeout.com/images/105585696/image.jpg',
     },
     {
       id: 14,
@@ -140,7 +140,7 @@ exports.seed = async function (knex) {
       about: 'The Oasis offers a delightful menu inspired by the sun-kissed shores of the Mediterranean. From fresh seafood to vibrant salads and savory kebabs, our dishes bring the essence of the region to your table.',
       contact_phone: '567-890-1234',
       contact_email: 'info@mediterraneanoasis.com',
-      image_url: 'https://example.com/mediterraneanoasis.jpg',
+      image_url: 'https://sandiegomagazine.com/wp-content/uploads/2023/08/f55ef6f2e04728ecc73aa275a5e37ea8.jpg',
     }
   ]);
 };
