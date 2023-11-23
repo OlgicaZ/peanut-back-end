@@ -15,8 +15,9 @@ const getRestaurant = async (request, response) => {
         const { id } = request.params;
         const restaurantsData = await knex('restaurants')
             .where({ 'restaurants.id' : id })
-            .join('business_hours', 'business_hours.restaurant_id', 'restaurants.id')
+            // .join('business_hours', 'business_hours.restaurant_id', 'restaurants.id')
             .join('addresses', 'addresses.restaurant_id', 'restaurants.id')
+            .select('restaurants.id', 'restaurant_name', 'cuisine', 'description', 'about', 'contact_phone', 'contact_email', 'image_url', 'street_address', 'city', 'state', 'postal_code', 'country');
 
         response.status(200).json(restaurantsData);
     } catch (error) {
