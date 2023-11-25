@@ -14,7 +14,7 @@ const getRestaurantBusinessHours = async (request, response) => {
 const getAllBusinessHours = async (request, response) => {
     try {
 
-        const { day } = request.body;
+        const { day } = request.query;
 
         const businessHours = await knex('business_hours')
             .where({'day' : day})
@@ -23,7 +23,7 @@ const getAllBusinessHours = async (request, response) => {
 
         response.status(200).json(businessHours);
     } catch (error) {
-        
+        response.status(400).send(`Error retrieving business hours: ${error}`);
     }
 }
 

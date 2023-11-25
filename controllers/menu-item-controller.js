@@ -4,6 +4,8 @@ const getMenuItems = async (request, response) => {
     try {
         const menuItemsData = await knex('menu_items')
             .where({ 'menu_items.restaurant_id' : request.params.id })
+            .join('restaurants', 'restaurants.id', 'menu_items.restaurant_id')
+            .select('menu_items.id', 'menu_items.restaurant_id', 'restaurant_name', 'menu_item_name', 'category', 'menu_items.description', 'price')
 
         response.status(200).json(menuItemsData);
     } catch (error) {
