@@ -94,7 +94,17 @@ The application relies primarily on internal data, supplemented by the integrati
 
 ### Endpoints
 
-TBD
+/api/restaurants - fetches all restaurants
+
+/api/restaurants/locations - fetches the locations all restaurants (gor Google Maps APi)
+
+/api/restaurants/:id - get details for a particular restaurant
+
+/api/restaurants/:id/business-hours - get buisness hours for a particular restaurant
+
+/api/restaurants/:id/menu-items - get all menu items for a particulat restaurant
+
+/api/restaurants/:id/allergens - get menu item allergens
 
 ### Auth
 
