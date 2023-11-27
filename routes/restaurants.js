@@ -36,6 +36,11 @@ router
     .route('/:id/menu-items')
     .get(menuItemController.getMenuItems);
 
+//get menu item allergens
+router
+    .route('/:id/allergens')
+    .get(menuItemController.getItemAllergens);
+
 //get filtered menu items
 
 module.exports = router;
