@@ -12,14 +12,15 @@ const getRestaurantBusinessHours = async (request, response) => {
 }
 
 const getAllBusinessHours = async (request, response) => {
+    console.log('In function');
     try {
 
         const { day } = request.query;
 
         const businessHours = await knex('business_hours')
-            .where({'day' : day})
+            .where({'business_hours.day' : day})
             .join('restaurants', 'business_hours.restaurant_id', 'restaurants.id')
-            .select('restaurants.id', 'restaurant_name', 'cuisine', 'description', 'image_url', 'day', 'open_time', 'close_time')
+            // .select('restaurants.id', 'restaurant_name', 'cuisine', 'description', 'image_url', 'day', 'open_time', 'close_time')
 
         response.status(200).json(businessHours);
     } catch (error) {
@@ -27,8 +28,7 @@ const getAllBusinessHours = async (request, response) => {
     }
 }
 
-
 module.exports = {
     getRestaurantBusinessHours,
-    getAllBusinessHours
+    getAllBusinessHours,
 }

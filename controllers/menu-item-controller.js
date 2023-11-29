@@ -20,135 +20,98 @@ const getItemAllergens = async (request, response) => {
     const { dairy, gluten, shellfish, treeNuts, peanuts, fish, vegan, vegetarian, pescatarian } = request.query;
     try {
 
-        const data = [];
+        const query = [];
 
         if (dairy) {
-            const menuItemsData = await knex('menu_items')
-                .rightJoin('allergens', 'menu_items.id', 'allergens.menu_item_id')
-                .where('menu_items.restaurant_id', restaurantId)
-                .andWhere('allergens.allergen_name', 'dairy')
-                .andWhere(builder => {
-                    builder.where({
-                        'allergens.is_contained': 1,
-                        'allergens.can_be_omitted': 1
-                    }).orWhere('allergens.is_contained', 0)
-                })
-            data.push(menuItemsData)
+            query.push({'allergens.allergen_name' : 'dairy', 'allergens.is_contained' : 0});
+            //query.push({'allergens.allergen_name' : 'dairy', 'allergens.is_contained' : 1, 'allergens.can_be_omitted' : 1});
         }
 
         if (gluten) {
-            const menuItemsData = await knex('menu_items')
-                .rightJoin('allergens', 'menu_items.id', 'allergens.menu_item_id')
-                .where('menu_items.restaurant_id', restaurantId)
-                .andWhere('allergens.allergen_name', 'gluten')
-                .andWhere(builder => {
-                    builder.where({
-                        'allergens.is_contained': 1,
-                        'allergens.can_be_omitted': 1
-                    }).orWhere('allergens.is_contained', 0)
-                })
-            data.push(menuItemsData)
+            query.push({'allergens.allergen_name' : 'gluten', 'allergens.is_contained' : 0});
+            //query.push({'allergens.allergen_name' : 'gluten', 'allergens.is_contained' : 1, 'allergens.can_be_omitted' : 1});
+
         }
 
         if (shellfish) {
-            const menuItemsData = await knex('menu_items')
-                .rightJoin('allergens', 'menu_items.id', 'allergens.menu_item_id')
-                .where('menu_items.restaurant_id', restaurantId)
-                .andWhere('allergens.allergen_name', 'shellfish')
-                .andWhere(builder => {
-                    builder.where({
-                        'allergens.is_contained': 1,
-                        'allergens.can_be_omitted': 1
-                    }).orWhere('allergens.is_contained', 0)
-                })
-            data.push(menuItemsData)
+            query.push({'allergens.allergen_name' : 'shellfish', 'allergens.is_contained' : 0});
+            //query.push({'allergens.allergen_name' : 'shellfish', 'allergens.is_contained' : 1, 'allergens.can_be_omitted' : 1});
+
         }
 
         if (fish) {
-            const menuItemsData = await knex('menu_items')
-                .rightJoin('allergens', 'menu_items.id', 'allergens.menu_item_id')
-                .where('menu_items.restaurant_id', restaurantId)
-                .andWhere('allergens.allergen_name', 'fish')
-                .andWhere(builder => {
-                    builder.where({
-                        'allergens.is_contained': 1,
-                        'allergens.can_be_omitted': 1
-                    }).orWhere('allergens.is_contained', 0)
-                })
-            data.push(menuItemsData)
+            query.push({'allergens.allergen_name' : 'fish', 'allergens.is_contained' : 0});
+            //query.push({'allergens.allergen_name' : 'fish', 'allergens.is_contained' : 1, 'allergens.can_be_omitted' : 1});
+
         }
 
         if (peanuts) {
-            const menuItemsData = await knex('menu_items')
-                .rightJoin('allergens', 'menu_items.id', 'allergens.menu_item_id')
-                .where('menu_items.restaurant_id', restaurantId)
-                .andWhere('allergens.allergen_name', 'peanuts')
-                .andWhere(builder => {
-                    builder.where({
-                        'allergens.is_contained': 1,
-                        'allergens.can_be_omitted': 1
-                    }).orWhere('allergens.is_contained', 0)
-                })
-            data.push(menuItemsData)
+            query.push({'allergens.allergen_name' : 'peanuts', 'allergens.is_contained' : 0});
+            //query.push({'allergens.allergen_name' : 'peanuts', 'allergens.is_contained' : 1, 'allergens.can_be_omitted' : 1});
+
         }
 
         if (treeNuts) {
-            const menuItemsData = await knex('menu_items')
-                .rightJoin('allergens', 'menu_items.id', 'allergens.menu_item_id')
-                .where('menu_items.restaurant_id', restaurantId)
-                .andWhere('allergens.allergen_name', 'tree nuts')
-                .andWhere(builder => {
-                    builder.where({
-                        'allergens.is_contained': 1,
-                        'allergens.can_be_omitted': 1
-                    }).orWhere('allergens.is_contained', 0)
-                })
-            data.push(menuItemsData)
+            query.push({'allergens.allergen_name' : 'tree_nuts', 'allergens.is_contained' : 0});
+            //query.push({'allergens.allergen_name' : 'tree_nuts', 'allergens.is_contained' : 1, 'allergens.can_be_omitted' : 1});
+
         }
 
         if (vegan) {
-            const menuItemsData = await knex('menu_items')
-                .rightJoin('dietary_restrictions', 'menu_items.id', 'dietary_restrictions.menu_item_id')
-                .where('menu_items.restaurant_id', restaurantId)
-                .andWhere('dietary_restrictions.restriction_name', 'vegan')
-                .andWhere(builder => {
-                    builder.where({
-                        'dietary_restrictions.is_safe': 0,
-                        'dietary_restrictions.can_be_adjusted': 1
-                    }).orWhere('dietary_restrictions.is_safe', 1)
-                })
-            data.push(menuItemsData)
+            query.push({'dietary_restrictions.restriction_name' : 'vegan', 'dietary_restrictions.is_safe' : 1});
+            //query.push({'dietary_restrictions.restriction_name' : 'vegan', 'dietary_restrictions.is_safe' : 0, 'dietary_restrictions.can_be_adjusted' : 1});
+
         }
 
         if (vegetarian) {
-            const menuItemsData = await knex('menu_items')
-                .rightJoin('dietary_restrictions', 'menu_items.id', 'dietary_restrictions.menu_item_id')
-                .where('menu_items.restaurant_id', restaurantId)
-                .andWhere('dietary_restrictions.restriction_name', 'vegetarian')
-                .andWhere(builder => {
-                    builder.where({
-                        'dietary_restrictions.is_safe': 0,
-                        'dietary_restrictions.can_be_adjusted': 1
-                    }).orWhere('dietary_restrictions.is_safe', 1)
-                })
-            data.push(menuItemsData)
+            query.push({'dietary_restrictions.restriction_name' : 'vegetarian', 'dietary_restrictions.is_safe' : 1});
+            //query.push({'dietary_restrictions.restriction_name' : 'vegetarian', 'dietary_restrictions.is_safe' : 0, 'dietary_restrictions.can_be_adjusted' : 1});
+
         }
 
         if (pescatarian) {
-            const menuItemsData = await knex('menu_items')
-                .rightJoin('dietary_restrictions', 'menu_items.id', 'dietary_restrictions.menu_item_id')
-                .where('menu_items.restaurant_id', restaurantId)
-                .andWhere('dietary_restrictions.restriction_name', 'pescatarian')
-                .andWhere(builder => {
-                    builder.where({
-                        'dietary_restrictions.is_safe': 0,
-                        'dietary_restrictions.can_be_adjusted': 1
-                    }).orWhere('dietary_restrictions.is_safe', 1)
-                })
-            data.push(menuItemsData)
+            query.push({'dietary_restrictions.restriction_name' : 'pescatarian', 'dietary_restrictions.is_safe' : 1});
+            //query.push({'dietary_restrictions.restriction_name' : 'pescatarian', 'dietary_restrictions.is_safe' : 0, 'dietary_restrictions.can_be_adjusted' : 1});
+
         }
 
-        response.status(200).json(data);
+        const data = await knex('menu_items')
+            .rightJoin('allergens', 'menu_items.id', 'allergens.menu_item_id')
+            .rightJoin('dietary_restrictions', 'menu_items.id', 'dietary_restrictions.menu_item_id')
+            .where('menu_items.restaurant_id', restaurantId)
+            .andWhere(builder => {
+                for (const condition of query) {
+                    builder.andWhere(innerBuilder => {
+                        for (const key in condition) {
+                            innerBuilder.where(key, condition[key]);
+                        }
+                    });
+                }
+            });
+
+            const mergedItems = data.reduce((result, currentItem) => {
+                const { menu_item_id } = currentItem;
+            
+                if (!result[menu_item_id]) {
+                    result[menu_item_id] = { ...currentItem }; 
+                } else {
+                    result[menu_item_id] = {
+                        restaurant_id: currentItem.restaurant_id,
+                        menu_item_name: currentItem.menu_item_name,
+                        description: currentItem.description,
+                        price: currentItem.price,
+                        category: currentItem.category,
+                        menu_item_id: currentItem.menu_item_id,
+                    };
+                }
+            
+                return result;
+            }, {});
+            
+            const mergedArray = Object.values(mergedItems);
+
+        console.log(mergedArray);
+        response.status(200).json(mergedArray);
     } catch (error) {
         response.status(400).send(`Error retrieving menu items: ${error}`);
     }

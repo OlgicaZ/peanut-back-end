@@ -16,7 +16,7 @@ router
     .route('/locations')
     .get(addressController.getRestaurantAddresses);
 
-//get all restaurant addresses
+//get all business hours
 router
     .route('/business-hours')
     .get(businessHoursController.getAllBusinessHours);
