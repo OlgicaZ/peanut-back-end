@@ -446,7 +446,7 @@ exports.seed = async function (knex) {
 
     //double cheeseburger
     { id: 331, menu_item_id: 56, allergen_name: 'dairy', is_contained: true, can_be_omitted: false },
-    { id: 332, menu_item_id: 56, allergen_name: 'gluten', is_contained: false, can_be_omitted: false },
+    { id: 332, menu_item_id: 56, allergen_name: 'gluten', is_contained: true, can_be_omitted: false },
     { id: 333, menu_item_id: 56, allergen_name: 'shellfish', is_contained: false, can_be_omitted: false },
     { id: 334, menu_item_id: 56, allergen_name: 'tree nuts', is_contained: false, can_be_omitted: false },
     { id: 335, menu_item_id: 56, allergen_name: 'peanuts', is_contained: false, can_be_omitted: false },
